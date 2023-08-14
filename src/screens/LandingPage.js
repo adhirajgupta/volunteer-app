@@ -1,93 +1,13 @@
 import React from 'react';
 import { Box, Divider, Grid, List, ListItem, Typography, } from '@mui/material';
 import { ScrollView, View, Image } from 'react-native';
-
-const activitiesList = [
-	{
-		title: 'Classroom Assistance',
-		activities: [
-			'Reading to or with children',
-			'Organizing class parties or special events',
-			'Assisting with classroom activities',
-			'Creating educational materials or displays',
-		],
-	},
-	{
-		title: 'Field Trips and Outings',
-		activities: [
-			'Chaperoning field trips',
-			'Driving students to and from events',
-			'Providing snacks or meals for outings',
-			'Assisting with fundraising efforts',
-		],
-	},
-	{
-		title: 'Administrative Support',
-		activities: [
-			'Assisting in the school office',
-			'Participating in parent-teacher association meetings',
-			'Serving on school boards or committees',
-			'Providing translation or interpreter services',
-		],
-	},
-];
-const benefitsList = [
-	{
-		title: 'Active Role in Children\'s Lives',
-		activities: [
-			{
-				text: `When parents get involved in school activities, they show their children that education is an essential part of life &
-education starts by offering
-support to children both at
-home and at school.`,
-				imagePath: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwy2T7AYeXm3uTX35fXsLjmD-bRcviXiMkX05UZB3i&s',
-			},
-			{
-				text: 'Offer support to children both at home and at school',
-				imagePath: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Parent-teacher_conference.jpg/1200px-Parent-teacher_conference.jpg',
-			},
-		],
-	},
-	{
-		title: 'Creating Stronger Communities',
-		activities: [
-			{
-				text: `Parental involvement in school
-activities fosters a stronger
-sense of community and
-provides an opportunity for
-parents to work with and get
-to know one another.`,
-				imagePath: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Parents_and_students_working_together.jpg/1200px-Parents_and_students_working_together.jpg',
-			},
-			{
-				text: 'Provides an opportunity for parents to work with and get to know one another',
-			},
-		],
-	},
-	{
-		title: 'Teaching of Life Skills \n to the Future Generation',
-		activities: [
-			{
-				text: `Volunteering in school
-activities allows parents to
-lead by example and teaches
-their children important life
-skills like teamwork,
-communication and problem-
-solving skills.`,
-				imagePath: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Parents_teaching_children.jpg/1200px-Parents_teaching_children.jpg',
-			},
-			{
-				text: 'Teaches important life skills like teamwork, communication and problem-solving skills',
-			},
-		],
-	},
-];
+import { activitiesList,benefitsList } from '../data/LandingPageText';
+import image1 from '../assets/logo512.png'
 
 
 
-const Home = () => {
+
+const LandingPage = () => {
 	return (
 		<ScrollView>
 			<Box
@@ -192,7 +112,7 @@ const Home = () => {
 				<Grid container spacing={2}>
 					{benefitsList.map((val, index) => (
 						<Grid item xs={4}>
-							<img src={"https://picsum.photos/200"} width={300} height={200} style={{ marginTop: 20 }} />
+							<img src={image1} width={300} height={200} style={{ marginTop: 20 }} />
 							<Typography variant='h3' color={"white"} mt={2} mb={2}>{val.title}</Typography>
 							<List>
 								{val.activities.map((text, index) => (
@@ -212,31 +132,81 @@ const Home = () => {
 				<Typography variant='h1' mt={15}> How to Sign Up for School Activities</Typography>
 				<Grid container spacing={2} mt={2}>
 					<Grid item xs={5}>
-						<img src={"https://picsum.photos/200/800"} width={'100%'} height={800} style={{ marginTop: 20 }} />
+						<img src={image1} width={'100%'} height={800} style={{ marginTop: 20 }} />
 					</Grid>
 					<Grid item xs={7}>
 						<Typography variant='h3' color={'white'}> Signing up for school activities is easy! Simply click here to find out
 							how. You can also speak with your child's teacher to learn about
 							upcoming events or volunteer opportunities.</Typography>
-						<Grid container xs={3.5}>
-							{/* <Typography variant='h3' color={'white'}>Apply for the area you
-								want to contribute in
-								we provide parents with
-								an online portal where
-								they can sign up for
-								school activities, review
-								the calendar or even
-								schedule time to meet
-								with teachers or school
-								administrators.</Typography> */}
+						<Grid container>
+							<Grid item xs={6} spacing={12}>
+								<Typography variant='h5' color={'white'} mt={5}>Apply for the area you
+									want to contribute in
+									we provide parents with
+									an online portal where
+									they can sign up for
+									school activities, review
+									the calendar or even
+									schedule time to meet
+									with teachers or school
+									administrators.</Typography>
+							</Grid>
+							<Grid item xs={6}>
+								<Typography variant='h5' color={'white'} mt={5} ml={2}>Apply for the area you
+									want to contribute in
+									we provide parents with
+									an online portal where
+									they can sign up for
+									school activities, review
+									the calendar or even
+									schedule time to meet
+									with teachers or school
+									administrators.</Typography>
+							</Grid>
+							<Typography variant="h5" color={'white'} mt={10}>
+								Joining the parent-teacher association is a great way to be
+								involved with school activities and learn about upcoming
+								volunteer opportunities
+							</Typography>
 						</Grid>
 					</Grid>
 				</Grid>
 				{/* -------------------------------------------------------------------------------------------- */}
-
+				{/* -----------------------SIXTH SLIDE WITH SIGN UP INSTRUCTIONS--------------------------------------- */}
+				<Typography variant='h2' color={"white"} mt={15} ml={5}>
+					Join Us Today!
+				</Typography>
+				<Box display="flex" justifyContent="center" mt={4} ml={5}>
+					<Box bgcolor="#2a4875" color="#ffffff" padding={2} marginRight={4} width="40vw" height="33.33vh">
+						<Typography variant="h3">
+							Get Involved
+						</Typography>
+						<Typography variant='h5' mt={2}>
+							Sign up to volunteer and participate in
+							school activities today! Check the school
+							website or contact the school office to
+							find out more about upcoming events,
+							meetings, and opportunities to get
+							involved.
+						</Typography>
+					</Box>
+					<Box bgcolor="#2a4875" color="#ffffff" padding={2} width="40vw" height="33.33vh">
+						<Typography variant="h3">
+							Make a Difference
+						</Typography>
+						<Typography variant='h5' mt={2}>
+							Being involved in school activities gives
+							you the opportunity to make a positive
+							impact on the education and well-being of
+							your child and the wider school
+							community. Join today and make a
+							difference!
+						</Typography>
+					</Box>
+				</Box>
 			</Box>
 		</ScrollView>
 	);
 };
 
-export default Home;
+export default LandingPage;

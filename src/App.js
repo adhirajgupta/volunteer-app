@@ -1,10 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
-import Home from './screens/Home';
+import LandingPage from './screens/LandingPage';
+import RouterNavigation from './navigation/main';
+import { RouterProvider,createBrowserRouter } from 'react-router-dom';
+
+
+const router = createBrowserRouter([
+  { path: "*", Component: RouterNavigation },
+]);
 
 function App() {
   return (
-    <Home />
+    <RouterProvider router={router}/>
+    // <RouterNavigation/>
   );
 }
 
